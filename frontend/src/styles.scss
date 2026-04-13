@@ -1,0 +1,148 @@
+@import 'primeng/resources/themes/aura-light-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f1f5f9;
+}
+
+// Toast
+.p-toast { z-index: 10000; }
+
+// Smooth transitions globally
+* { transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease; }
+
+// Card hover lift
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+// Avatar circle
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  flex-shrink: 0;
+}
+
+// Sidebar link active
+.sidebar-link {
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: var(--surface-100);
+  }
+  &.active-link {
+    background-color: var(--primary-100) !important;
+    color: var(--primary-700) !important;
+    font-weight: 600;
+  }
+}
+
+// Calendar day cells
+.day-cell {
+  min-height: 110px;
+  border: 1px solid var(--surface-200);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  &:hover {
+    background-color: var(--surface-50);
+    border-color: var(--primary-300);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  &.today {
+    border: 2px solid var(--primary-500);
+    background: var(--primary-50);
+  }
+  &.other-month {
+    opacity: 0.35;
+    background: var(--surface-50);
+  }
+}
+
+// Rich table overrides
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--surface-50) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-color-secondary);
+}
+.p-datatable .p-datatable-tbody > tr {
+  transition: background-color 0.15s ease;
+}
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: var(--primary-50) !important;
+}
+
+// Entry status chips in calendar
+.entry-pill {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &.draft { background: #f1f5f9; color: #64748b; }
+  &.submitted { background: #dbeafe; color: #1d4ed8; }
+  &.approved { background: #dcfce7; color: #15803d; }
+  &.rejected { background: #fef2f2; color: #dc2626; }
+}
+
+// Page header
+.page-header {
+  margin-bottom: 1.5rem;
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--surface-900);
+    margin: 0;
+  }
+  .subtitle {
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+}
+
+// Gradient backgrounds for stat icons
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i { font-size: 1.3rem; color: white; }
+}
+.stat-icon.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.stat-icon.green { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.stat-icon.orange { background: linear-gradient(135deg, #f97316, #ea580c); }
+.stat-icon.purple { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+.stat-icon.red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.stat-icon.teal { background: linear-gradient(135deg, #14b8a6, #0d9488); }
