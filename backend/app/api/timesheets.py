@@ -306,7 +306,7 @@ def list_team_entries():
         if not team_user_ids:
             return jsonify({"items": [], "total": 0, "page": 1, "pages": 0, "per_page": 20})
 
-        query = query.filter(TimesheetEntry.user_id.in_(team_user_ids))
+        query = TimesheetEntry.query.filter(TimesheetEntry.user_id.in_(team_user_ids))
 
     status = request.args.get("status")
     if status:
